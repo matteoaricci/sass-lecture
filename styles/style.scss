@@ -1,0 +1,89 @@
+$titleFont: 'Gill Sans';
+$bkgColor: rgb(179,207,221);
+
+@mixin leftRightMargin($property) {
+    margin-left: $property;
+    margin-right: $property;
+}
+
+header {
+    text-align: center;
+    font-family: $titleFont;
+    background-color: $bkgColor;
+    @include leftRightMargin(7%);
+
+    h1 {
+        font-size: 4rem;
+    }
+}
+
+#container {
+    display: flex;
+    justify-content: space-evenly;
+
+    #song-info {
+        padding: 1%;
+        width: 40%;
+
+        #album-art {
+            position: relative;
+
+            #album-title {
+                background-color: $bkgColor;
+                text-transform: uppercase;
+                text-align: center;
+                color: white;
+                text-shadow: -3px 5px 0 black;
+                width: 100%;
+                font-family: $titleFont;
+                letter-spacing: 0.75rem;
+                font-size: 3rem;
+                font-weight: 600;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+    
+            img {
+                width: 100%;
+            }
+        }
+
+        #song-list {
+            text-align: center;
+            background-color: $bkgColor;
+
+            .song {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                padding: 1.5rem;
+                font-size: 1.5rem;
+                transition: 0.2s ease;
+                &:hover {
+                    letter-spacing: 0.2rem;
+                    font-style: italic;
+                }
+            }
+        }
+    }
+
+    #clicked-container {
+        margin: 1%;
+        text-align: center;
+        width: 40%;
+        position: relative;
+        background-color: $bkgColor;
+
+        #clicked-song {
+            font-family: cursive;
+            top: 40%;
+            position: sticky;
+            font-size: 2rem;
+        }
+
+        #spotify {
+            top: 50%;
+            position: sticky;
+        }
+    }
+}
